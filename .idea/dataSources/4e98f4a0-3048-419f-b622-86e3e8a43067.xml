@@ -18,11 +18,13 @@
       <ObjectId>63117</ObjectId>
       <StateNumber>13928</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>14042</IntrospectionStateNumber>
+      <IntrospectionStateNumber>14049</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
       <Relations>sequence|table|63118|63120|1
 sequence|table|63126|63128|1
+sequence|table|71309|71311|1
+sequence|table|71317|71319|1
 </Relations>
     </database>
     <database id="5" parent="1" name="SaveMoney">
@@ -135,7 +137,7 @@ sequence|table|63126|63128|1
       <Comment>standard public schema</Comment>
       <StateNumber>360</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>14043</IntrospectionStateNumber>
+      <IntrospectionStateNumber>14050</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -203,7 +205,15 @@ sequence|table|63126|63128|1
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="33" parent="24" name="employee_id_seq">
+    <sequence id="33" parent="24" name="departments_id_seq">
+      <ObjectId>71309</ObjectId>
+      <StateNumber>14044</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="34" parent="24" name="employee_id_seq">
       <ObjectId>63126</ObjectId>
       <StateNumber>13932</StateNumber>
       <Owner>postgres</Owner>
@@ -211,17 +221,35 @@ sequence|table|63126|63128|1
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <table id="34" parent="24" name="department">
+    <sequence id="35" parent="24" name="employees_id_seq">
+      <ObjectId>71317</ObjectId>
+      <StateNumber>14045</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="36" parent="24" name="department">
       <ObjectId>63120</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>13932</StateNumber>
     </table>
-    <table id="35" parent="24" name="employee">
+    <table id="37" parent="24" name="departments">
+      <ObjectId>71311</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>14044</StateNumber>
+    </table>
+    <table id="38" parent="24" name="employee">
       <ObjectId>63128</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>13932</StateNumber>
     </table>
-    <column id="36" parent="34" name="id">
+    <table id="39" parent="24" name="employees">
+      <ObjectId>71319</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>14045</StateNumber>
+    </table>
+    <column id="40" parent="36" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -229,27 +257,55 @@ sequence|table|63126|63128|1
       <DefaultExpression>nextval(&apos;department_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="37" parent="34" name="department_name">
+    <column id="41" parent="36" name="department_name">
       <Position>2</Position>
       <DataType>varchar(256)|0s</DataType>
       <StateNumber>13931</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="38" parent="34" name="department_pkey">
+    <index id="42" parent="36" name="department_pkey">
       <ObjectId>63124</ObjectId>
       <StateNumber>13931</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="39" parent="34" name="department_pkey">
+    <key id="43" parent="36" name="department_pkey">
       <ObjectId>63125</ObjectId>
       <StateNumber>13931</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>department_pkey</UnderlyingIndexName>
     </key>
-    <column id="40" parent="35" name="id">
+    <column id="44" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>14044</StateNumber>
+      <DefaultExpression>nextval(&apos;departments_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="45" parent="37" name="department_name">
+      <Position>2</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <StateNumber>14044</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="46" parent="37" name="departments_pkey">
+      <ObjectId>71315</ObjectId>
+      <StateNumber>14044</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="47" parent="37" name="departments_pkey">
+      <ObjectId>71316</ObjectId>
+      <StateNumber>14044</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>departments_pkey</UnderlyingIndexName>
+    </key>
+    <column id="48" parent="38" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -257,47 +313,116 @@ sequence|table|63126|63128|1
       <DefaultExpression>nextval(&apos;employee_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="41" parent="35" name="employee_name">
+    <column id="49" parent="38" name="employee_name">
       <Position>2</Position>
       <DataType>varchar(256)|0s</DataType>
       <StateNumber>13932</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="42" parent="35" name="date_of_bitrh">
+    <column id="50" parent="38" name="date_of_bitrh">
       <Position>3</Position>
       <DataType>date|0s</DataType>
       <StateNumber>13932</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="43" parent="35" name="salary">
+    <column id="51" parent="38" name="salary">
       <Position>4</Position>
       <DataType>numeric|0s</DataType>
       <StateNumber>13932</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="44" parent="35" name="department_id">
+    <column id="52" parent="38" name="department_id">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>13932</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="45" parent="35" name="employee_pkey">
+    <index id="53" parent="38" name="employee_pkey">
       <ObjectId>63135</ObjectId>
       <StateNumber>13932</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="46" parent="35" name="employee_pkey">
+    <key id="54" parent="38" name="employee_pkey">
       <ObjectId>63136</ObjectId>
       <StateNumber>13932</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>employee_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="47" parent="35" name="employee_department_id_fkey">
+    <foreign-key id="55" parent="38" name="employee_department_id_fkey">
       <ObjectId>63137</ObjectId>
       <StateNumber>13932</StateNumber>
+      <ColNames>department_id</ColNames>
+      <RefTableId>63120</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>department</RefTableName>
+      <RefKeyName>department_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="56" parent="39" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>14045</StateNumber>
+      <DefaultExpression>nextval(&apos;employees_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="57" parent="39" name="first_name">
+      <Position>2</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <StateNumber>14045</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="58" parent="39" name="last_name">
+      <Position>3</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <StateNumber>14045</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="59" parent="39" name="department_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>14045</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="60" parent="39" name="job_title">
+      <Position>5</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <StateNumber>14045</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="61" parent="39" name="date_of_bitrh">
+      <Position>6</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>14045</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="62" parent="39" name="gender">
+      <Position>7</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <StateNumber>14045</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="63" parent="39" name="employees_pkey">
+      <ObjectId>71326</ObjectId>
+      <StateNumber>14045</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="64" parent="39" name="employees_pkey">
+      <ObjectId>71327</ObjectId>
+      <StateNumber>14045</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>employees_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="65" parent="39" name="employees_department_id_fkey">
+      <ObjectId>71328</ObjectId>
+      <StateNumber>14045</StateNumber>
       <ColNames>department_id</ColNames>
       <RefTableId>63120</RefTableId>
       <RefColPositions>1</RefColPositions>
