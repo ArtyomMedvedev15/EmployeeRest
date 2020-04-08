@@ -55,7 +55,7 @@ public class EmployeeRestController {
             return new ResponseEntity<Employee>(HttpStatus.BAD_REQUEST);
         }
 
-        employeeService.saveEmployee(employee);
+        employeeService.updateEmployee(employee);
 
         return new ResponseEntity<Employee>(employee,httpHeaders,HttpStatus.OK);
     }

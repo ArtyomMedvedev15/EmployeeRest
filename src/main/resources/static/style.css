@@ -1,0 +1,234 @@
+body{
+    background-image: url(/static/img/mainBG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.container {
+    max-width: 1259px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.table {
+    width: 100%;
+    border:none;
+}
+
+.table-header {
+    display: flex;
+    width: 100%;
+    background: #000;
+    padding: 18px 0;
+}
+
+.table-row {
+    display: flex;
+    width: 100%;
+    padding: 18px 0;
+
+
+}
+.table-row{
+    background: white;
+}
+
+.table-data, .header__item {
+    flex: 1 1 20%;
+    text-align: center;
+    width: 100%;
+}
+
+.header__item {
+    text-transform: uppercase;
+}
+
+.filter__link {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.default-btn{
+    display: inline-block;
+    line-height: 18px;
+    font-weight: 500;
+    font-size: 19px;
+    font-family: "Times New Roman", serif;
+    padding: 8px 30px 8px 24px;
+    border: 3px solid #2E7D32;
+    border-right-width: 20px;
+    position: relative;
+    z-index: 2;
+    outline: none;
+    transition: all .3s;
+    background-color: #ffffff;
+    color: #202020;
+    margin-right: 20px;
+}
+
+.default-btn-link:hover,.default-btn:hover {
+    background-color: #2E7D32;
+}
+
+.modal {
+    display: block;
+    width: 600px;
+    max-width: 100%;
+    height: 400px;
+    max-height: 100%;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
+}
+.closed {
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+
+    background: rgba(0, 0, 0, 0.6);
+}
+.modal-guts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 20px 50px 20px 20px;
+}
+
+.modal .close-button {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 20px;
+
+    border: 0;
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.3rem;
+}
+
+.open-button {
+    border: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: lightgreen;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 21px;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.header_table{
+    margin-left: 40px;
+}
+
+.default-btn-link{
+    display: inline-block;
+    line-height: 18px;
+    font-weight: 500;
+    font-size: 19px;
+    font-family: "Times New Roman", serif;
+    padding: 8px 30px 8px 24px;
+    border: 3px solid #2E7D32;
+    border-right-width: 20px;
+    position: relative;
+    z-index: 2;
+    outline: none;
+    transition: all .3s;
+    background-color: #ffffff;
+    color: #202020;
+    margin-right: 20px;
+    width: 20px;
+}
