@@ -1,8 +1,8 @@
 package com.employeeRest.config;
 import com.employeeRest.dao.Implementation.EmployeeDaoImpl;
 import com.employeeRest.dao.interfaces.EmployeeDao;
-import com.employeeRest.service.EmployeeService;
-import com.employeeRest.service.EmployeeServiceImpl;
+import com.employeeRest.service.interfaces.EmployeeService;
+import com.employeeRest.service.implementation.EmployeeServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
