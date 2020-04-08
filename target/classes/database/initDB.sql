@@ -9,6 +9,6 @@ create table IF NOT EXISTS employees(
                                        department_id int,
                                        job_title varchar(256),
                                        date_of_bitrh date,
-                                       geder varchar(256),
+                                       gender varchar(256),
                                        foreign key (department_id) references department(id) on delete cascade
 );

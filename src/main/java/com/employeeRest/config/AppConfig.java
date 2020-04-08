@@ -14,10 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import javax.sql.DataSource;
 
 @Configuration
-@EnableWebMvc
-@ComponentScan(basePackages = "com.employeeRest")
 public class AppConfig extends WebMvcConfigurerAdapter {
-
 
     @Bean
     public DataSource getDataSource() {
