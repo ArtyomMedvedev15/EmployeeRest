@@ -80,7 +80,27 @@
             <version>2.3.23</version>
         </dependency>
     </dependencies>
+<!--    на потом
 
+
+
+<button id='Update"+ result[i].id + "'" + "data-parameter-name='"+result[i].employee_name+"'" +
+        "data-parametr-date='"+result[i].date_of_birth_employee+"'" + "data-parametr-salary='"+result[i].salary + "'" + "data-parametr-departmentId='"
+        + result[i].department_id + "'"+">Update</button>"
+
+
+
+                        $("#Update"+ result[i].id ).click(function(event){
+                            event.preventDefault();
+                            var formData = {
+                                employee_name : this.getAttribute("data-parameter-name"),
+                                date_of_birth_employee :  this.getAttribute("data-parametr-date"),
+                                salary:this.getAttribute("data-parametr-salary"),
+                                department_id: this.getAttribute("data-parametr-departmentId")
+                            };
+                            FillAndUpdate(formData);
+                        });
+        -->
     <build>
         <plugins>
             <plugin>

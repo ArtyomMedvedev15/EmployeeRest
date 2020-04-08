@@ -22,7 +22,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
                 "job_title,date_of_bitrh,gender) VALUES(?,?,?,?,?,?)";
         return jdbcTemplate.update(sql,employee.getFirst_name(),employee.getLast_name()
                 ,employee.getDepartment_id(),employee.getJob_title(),
-                employee.getDate_of_birth_employee(),employee.getGender());
+                employee.getDate_of_bitrh(),employee.getGender());
     }
 
     @Override
@@ -41,7 +41,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public int updateEmployee(Employee employee) {
         String sql = "UPDATE employees SET first_name = ?,last_name=?,department_id=?,job_title=?,date_of_bitrh=?,gender=? WHERE id = ?";
         return jdbcTemplate.update(sql,employee.getFirst_name(),employee.getLast_name(),employee.getDepartment_id(),
-                employee.getJob_title(),employee.getDate_of_birth_employee(),employee.getGender(),employee.getId());
+                employee.getJob_title(),employee.getDate_of_bitrh(),employee.getGender(),employee.getId());
     }
 
     @Override

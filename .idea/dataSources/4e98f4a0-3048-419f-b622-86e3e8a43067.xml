@@ -18,7 +18,7 @@
       <ObjectId>63117</ObjectId>
       <StateNumber>13928</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>14049</IntrospectionStateNumber>
+      <IntrospectionStateNumber>14069</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
       <Relations>sequence|table|63118|63120|1
@@ -137,7 +137,7 @@ sequence|table|71317|71319|1
       <Comment>standard public schema</Comment>
       <StateNumber>360</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>14050</IntrospectionStateNumber>
+      <IntrospectionStateNumber>14070</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -247,7 +247,7 @@ sequence|table|71317|71319|1
     <table id="39" parent="24" name="employees">
       <ObjectId>71319</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>14045</StateNumber>
+      <StateNumber>14068</StateNumber>
     </table>
     <column id="40" parent="36" name="id">
       <Position>1</Position>
@@ -396,9 +396,9 @@ sequence|table|71317|71319|1
     </column>
     <column id="61" parent="39" name="date_of_bitrh">
       <Position>6</Position>
-      <DataType>date|0s</DataType>
-      <StateNumber>14045</StateNumber>
-      <TypeId>1082</TypeId>
+      <DataType>varchar(256)|0s</DataType>
+      <StateNumber>14068</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
     <column id="62" parent="39" name="gender">
       <Position>7</Position>
@@ -408,7 +408,7 @@ sequence|table|71317|71319|1
     </column>
     <index id="63" parent="39" name="employees_pkey">
       <ObjectId>71326</ObjectId>
-      <StateNumber>14045</StateNumber>
+      <StateNumber>14068</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>

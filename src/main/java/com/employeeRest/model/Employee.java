@@ -36,6 +36,6 @@ public class Employee {
     private String gender;
 
     @Column(name = "date_of_bitrh")
-    private Date date_of_birth_employee;
+    private String date_of_bitrh;
 
 }
