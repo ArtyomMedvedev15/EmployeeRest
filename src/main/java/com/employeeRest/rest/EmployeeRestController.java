@@ -51,6 +51,7 @@ public class EmployeeRestController {
     @RequestMapping(value = "/update",method = RequestMethod.PUT,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<Employee>updateEntity(@RequestBody @Valid Employee employee, UriComponentsBuilder uriComponentsBuilder){
         HttpHeaders httpHeaders = new HttpHeaders();
+
         if(employee == null){
             return new ResponseEntity<Employee>(HttpStatus.BAD_REQUEST);
         }

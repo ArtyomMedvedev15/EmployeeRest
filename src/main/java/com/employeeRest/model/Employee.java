@@ -6,7 +6,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 @Table(name = "employee")
@@ -37,5 +36,18 @@ public class Employee {
 
     @Column(name = "date_of_bitrh")
     private String date_of_bitrh;
+
+    public Employee(String first_name, String last_name, Long department_id, String job_title, String gender, String date_of_bitrh) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.department_id = department_id;
+        this.job_title = job_title;
+        this.gender = gender;
+        this.date_of_bitrh = date_of_bitrh;
+    }
+
+    public Employee() {
+    }
+
 
 }
